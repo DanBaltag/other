@@ -41,15 +41,15 @@ class Organizatie{
 		}
 		void citeste_fisier(int n){
 			ifstream f("Organizatie.txt");
-			string linie;
+			string mat[4*n];
 			if (!f.is_open()){
 					cerr<<"eroare la deschiderea fisierului\n";
 					return;
 			}
-			int k = 0;
-			for(int i=0;i<n*4-4;i++)
-				getline(f, linie);
-		 	while(getline(f,s)) cout<<linie<<"\n";
+			for(int i=0;i<n*4;i++)
+				f >> mat[i];
+			for(int i=n*4-4;i<n*4;i++)
+				cout<<mat[i]<<endl;
 			f.close();
 		}
 };
