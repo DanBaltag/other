@@ -51,13 +51,13 @@ Arie* tip(){
 			if (l1>0 && l2>0) return (aux = new Dreptunghi(l1,l2));
 			else return (aux = new Patrat);
 		default:
-			break;
+			return (aux = new Dreptunghi(l1,l2));
 	}
 }
 
 void afis(int n, Arie* a[]){
 	for (int i=0;i<n;i++)
-		cout<<i<<":"<<a[i]->get_arie()<<endl;
+		cout<<i+1<<":"<<a[i]->get_arie()<<endl;
 	cout<<endl;
 }
 
@@ -79,8 +79,8 @@ void comp(int n, Arie* a[]){
 	int c, e1, e2; cin>>e1; cin>>e2;
 	cout<<"alegeti operatia de comparare:\n1:maxim\n2:minim\n";cin>>c;
 	switch(c){
-		case 1: cout<<maxim(a[e1],a[e2]); break;
-		case 2: cout<<minim(a[e1],a[e2]); break;
+		case 1: cout<<maxim(a[e1-1],a[e2-1])<<endl; break;
+		case 2: cout<<minim(a[e1-1],a[e2-1])<<endl; break;
 		default:break;
 	}
 }
@@ -95,5 +95,5 @@ int main(){
 	for (int i=0;i<n;i++){
 		cout<<a[i]->get_arie()<<endl;
 	}
-	//comp(n,a);
+	comp(n,a);
 } 
